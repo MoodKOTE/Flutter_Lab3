@@ -5,7 +5,9 @@ void main() {
   runApp(
     const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: GradientContainer()),
+      home: Scaffold(
+      body: GradientContainer(Colors.white, Colors.blue, Colors.red),
+      ),
     ),
   );
 }
