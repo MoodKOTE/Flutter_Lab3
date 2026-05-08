@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  GradientContainer({super.key});
+
+  var activeDiceImage = 'assets/images/dice-1.png';
 
   void rollDice() {
-    print('Кнопка нажата');
+    activeDiceImage = 'assets/images/dice-4.png';
+    print('Изменил картинку');
   }
 
   @override
@@ -12,7 +15,7 @@ class GradientContainer extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.white, Colors.blue, Colors.red],
+          colors: [Colors.deepPurple, Colors.purpleAccent],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -21,15 +24,15 @@ class GradientContainer extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset('assets/images/dice-1.png', height: 200),
-            SizedBox(height: 20),
+            Image.asset(activeDiceImage, width: 300),
+            const SizedBox(height: 20),
             TextButton(
               onPressed: rollDice,
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
-                textStyle: TextStyle(fontSize: 28),
+                textStyle: const TextStyle(fontSize: 28),
               ),
-              child: Text('Roll Dice'),
+              child: const Text('Roll Dice'),
             ),
           ],
         ),
