@@ -10,33 +10,25 @@ class GradientContainer extends StatelessWidget {
     print('Изменил картинку');
   }
 
-  @override
+    @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.deepPurple, Colors.purpleAccent],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(activeDiceImage, width: 300),
-            const SizedBox(height: 20),
-            TextButton(
-              onPressed: rollDice,
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                textStyle: const TextStyle(fontSize: 28),
-              ),
-              child: const Text('Roll Dice'),
-            ),
-          ],
-        ),
-      ),
-    );
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Image.asset(activeDiceImage, width: 300),
+        const SizedBox(height: 20),
+        TextButton(
+          onPressed: rollDice,
+          style: TextButton.styleFrom(
+            // padding: const EdgeInsets.only(
+            //   top: 20,
+            // ),
+            foregroundColor: Colors.lime,
+            textStyle: const TextStyle(fontSize: 30),
+          ),
+          child: const Text("Roll Dice"),
+        ), // TextButton
+      ],
+    ); // Column
   }
 }
